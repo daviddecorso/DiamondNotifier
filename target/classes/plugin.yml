@@ -1,0 +1,7 @@
+name: DiamondNotifier
+version: 1.0
+main: me.davidfire1332.diamondnotifier.DiamondNotifier
+api-version: 1.13
+authors: [davidfire1332]
+description: Plugin that notifies users when diamonds are found.
+permission: DiamondNotifier.isNotified
