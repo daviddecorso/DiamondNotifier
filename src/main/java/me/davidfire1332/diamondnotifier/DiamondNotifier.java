@@ -37,14 +37,20 @@ public final class DiamondNotifier extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onDiamondMined(BlockBreakEvent e) {
-        Player player = e.getPlayer();
-        Block block = e.getBlock();
-        Material material = block.getType();
-        Chunk chunk = block.getChunk();
 
-        if (material.equals(Material.DIAMOND_ORE) && block.getY() < 17 && !diamondVeins.containsKey(chunk)) {
-            Bukkit.broadcast("§3[DiamondNotifier] §f" + player.getName() + " just mined diamonds.", "DiamondNotifier.isNotified");
-            diamondVeins.put(chunk, player.getName());
+        if (e.getBlock().getY() < 17) {
+            Block block = e.getBlock();
+            Material material = block.getType();
+
+            if (material == Material.DIAMOND_ORE) {
+                Chunk chunk = block.getChunk();
+
+                if (!diamondVeins.containsKey(chunk)) {
+                    Player player = e.getPlayer();
+                    Bukkit.broadcast("§3[DiamondNotifier] §f" + player.getName() + " just mined diamonds.", "DiamondNotifier.isNotified");
+                    diamondVeins.put(chunk, player.getName());
+                }
+            }
         }
     }
 }
