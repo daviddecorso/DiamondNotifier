@@ -1,5 +1,5 @@
 # DiamondNotifier
-Minecraft plugin that notifies permitted users when a player mines a new diamond vein.
+Fast and lightweight Minecraft server plugin that notifies permitted users when a player mines a new diamond vein.
 
 ## Installing:
 
